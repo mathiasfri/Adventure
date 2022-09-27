@@ -32,4 +32,24 @@ public class Room
     {
         this.roomSouth = room;
     }
+
+    public Room getEast()
+    {
+        return roomEast;
+    }
+
+    public Room getWest()
+    {
+        return roomWest;
+    }
+
+    public Room getNorth()
+    {
+        return roomNorth;
+    }
+
+    public Room getSouth()
+    {
+        return roomSouth;
+    }
 }
