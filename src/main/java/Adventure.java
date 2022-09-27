@@ -1,5 +1,7 @@
 public class Adventure
 {
+    Room currentRoom = null;
+
     public Adventure()
     {
         Room room1 = new Room(1, "Rum nummer 1");
@@ -49,5 +51,59 @@ public class Adventure
         // Navigering i room9
         room9.setNorth(room6);
         room9.setWest(room8);
+
+        room1 = currentRoom;
+    }
+
+    public boolean goEast()
+    {
+        if (currentRoom.getEast() == null)
+        {
+            return false;
+        }
+        else
+        {
+            currentRoom = currentRoom.getEast();
+            return true;
+        }
+    }
+
+    public boolean goWest()
+    {
+        if (currentRoom.getWest() == null)
+        {
+            return false;
+        }
+        else
+        {
+            currentRoom = currentRoom.getWest();
+            return true;
+        }
+    }
+
+    public boolean goNorth()
+    {
+        if (currentRoom.getNorth() == null)
+        {
+            return false;
+        }
+        else
+        {
+            currentRoom = currentRoom.getNorth();
+            return true;
+        }
+    }
+
+    public boolean goSouth()
+    {
+        if (currentRoom.getSouth() == null)
+        {
+            return false;
+        }
+        else
+        {
+            currentRoom = currentRoom.getSouth();
+            return true;
+        }
     }
 }
