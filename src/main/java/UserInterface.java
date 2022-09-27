@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 public class UserInterface
@@ -18,16 +19,64 @@ public class UserInterface
 
         String userChoice = null;
 
-        switch (userChoice)
+        while (!Objects.equals(userChoice, "exit"))
         {
-            case "north", "n", "go north":
-                ad.goNorth();
-            case "south", "s", "go south":
-                ad.goSouth();
-            case "west", "w", "go west":
-                ad.goWest();
-            case "east", "e", "go east":
-                ad.goEast();
+            userChoice = sc.nextLine();
+
+            switch (userChoice)
+            {
+                case "north", "n", "go north":
+                    boolean canGoNorth = ad.goNorth();
+                    if (canGoNorth)
+                    {
+                        System.out.println("You have chosen to go North.");
+                        ad.goNorth();
+                        System.out.println(ad.look());
+                    } else
+                        System.out.println("You cannot go this way!");
+                    break;
+
+                case "south", "s", "go south":
+                    boolean canGoSouth = ad.goSouth();
+                    if (canGoSouth)
+                    {
+                        System.out.println("You have chosen to go South.");
+                        ad.goSouth();
+                        System.out.println(ad.look());
+                    } else
+                        System.out.println("You cannot go this way!");
+                    break;
+
+                case "west", "w", "go west":
+                    boolean canGoWest = ad.goWest();
+                    if (canGoWest)
+                    {
+                        System.out.println("You have chosen to go West.");
+                        ad.goWest();
+                        System.out.println(ad.look());
+                    } else
+                        System.out.println("You cannot go that way!");
+                    break;
+
+                case "east", "e", "go east":
+                    boolean canGoEast = ad.goEast();
+                    if (canGoEast)
+                    {
+                        System.out.println("You have chosen to go East.");
+                        ad.goEast();
+                        System.out.println(ad.look());
+                    } else
+                        System.out.println("You cannot go that way!");
+                    break;
+
+                case "look":
+                    System.out.println(ad.look());
+                    break;
+
+                case "exit":
+                    System.out.println("Cheers :)");
+                    System.exit(0);
+            }
         }
     }
 }

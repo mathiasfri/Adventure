@@ -52,7 +52,7 @@ public class Adventure
         room9.setNorth(room6);
         room9.setWest(room8);
 
-        room1 = currentRoom;
+        currentRoom = room1;
     }
 
     public boolean goEast()
@@ -105,5 +105,10 @@ public class Adventure
             currentRoom = currentRoom.getSouth();
             return true;
         }
+    }
+
+    public String look()
+    {
+        return currentRoom.getRoomInfo();
     }
 }

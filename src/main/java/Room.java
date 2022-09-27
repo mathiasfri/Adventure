@@ -52,4 +52,9 @@ public class Room
     {
         return roomSouth;
     }
+
+    public String getRoomInfo()
+    {
+        return roomDescription;
+    }
 }
