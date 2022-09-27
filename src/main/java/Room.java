@@ -1,9 +1,17 @@
 public class Room
 {
+    private int roomNumber;
+    private String roomDescription;
     private Room roomEast;
     private Room roomWest;
     private Room roomNorth;
     private Room roomSouth;
+
+    public Room(int roomNumber, String roomDescription)
+    {
+        this.roomNumber = roomNumber;
+        this.roomDescription = roomDescription;
+    }
 
     public void setEast(Room room)
     {
