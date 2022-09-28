@@ -4,7 +4,16 @@ import java.util.Scanner;
 public class UserInterface
 {
     Scanner sc = new Scanner(System.in);
-    Adventure ad = new Adventure();
+    Player player;
+    Map map;
+    Adventure ad;
+
+    public UserInterface()
+    {
+        player = new Player();
+        map = new Map();
+        ad = new Adventure();
+    }
 
     public void start()
     {
@@ -21,56 +30,56 @@ public class UserInterface
 
         while (!Objects.equals(userChoice, "exit"))
         {
-            userChoice = sc.nextLine();
+            userChoice = sc.nextLine().toLowerCase();
 
             switch (userChoice)
             {
                 case "north", "n", "go north":
-                    boolean canGoNorth = ad.goNorth();
+                    boolean canGoNorth = player.goNorth();
                     if (canGoNorth)
                     {
                         System.out.println("You have chosen to go North.");
-                        ad.goNorth();
-                        System.out.println(ad.look());
+                        player.goNorth();
+                        System.out.println(player.look());
                     } else
                         System.out.println("You cannot go this way!");
                     break;
 
                 case "south", "s", "go south":
-                    boolean canGoSouth = ad.goSouth();
+                    boolean canGoSouth = player.goSouth();
                     if (canGoSouth)
                     {
                         System.out.println("You have chosen to go South.");
-                        ad.goSouth();
-                        System.out.println(ad.look());
+                        player.goSouth();
+                        System.out.println(player.look());
                     } else
                         System.out.println("You cannot go this way!");
                     break;
 
                 case "west", "w", "go west":
-                    boolean canGoWest = ad.goWest();
+                    boolean canGoWest = player.goWest();
                     if (canGoWest)
                     {
                         System.out.println("You have chosen to go West.");
-                        ad.goWest();
-                        System.out.println(ad.look());
+                        player.goWest();
+                        System.out.println(player.look());
                     } else
                         System.out.println("You cannot go that way!");
                     break;
 
                 case "east", "e", "go east":
-                    boolean canGoEast = ad.goEast();
+                    boolean canGoEast = player.goEast();
                     if (canGoEast)
                     {
                         System.out.println("You have chosen to go East.");
-                        ad.goEast();
-                        System.out.println(ad.look());
+                        player.goEast();
+                        System.out.println(player.look());
                     } else
                         System.out.println("You cannot go that way!");
                     break;
 
                 case "look":
-                    System.out.println(ad.look());
+                    System.out.println(player.look());
                     break;
 
                 case "exit":
