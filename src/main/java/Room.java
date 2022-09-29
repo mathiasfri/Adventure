@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Room
 {
     private int roomNumber;
@@ -6,6 +8,7 @@ public class Room
     private Room roomWest;
     private Room roomNorth;
     private Room roomSouth;
+    ArrayList<String> items = new ArrayList<>();
 
     public Room(int roomNumber, String roomDescription)
     {
@@ -56,5 +59,10 @@ public class Room
     public String getRoomInfo()
     {
         return roomDescription;
+    }
+
+    public String getItems()
+    {
+        return items.get(roomNumber - 1);
     }
 }

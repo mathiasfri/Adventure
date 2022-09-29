@@ -7,22 +7,29 @@ public class UserInterface
     Player player;
     Map map;
     Adventure ad;
+    Items items;
 
     public UserInterface()
     {
         player = new Player();
         map = new Map();
         ad = new Adventure();
+        items = new Items();
     }
 
     public void start()
     {
         System.out.println("""
-                Welcome to your adventure! To move around, type in the following: west/w, north/n, south/s, 
-                east/e.
+                Welcome to your adventure! To move around, type in the following: 
+                west/w/go west - to go west
+                north/n/go north - to go north
+                south/s/go south - to go south
+                east/e/go east - to go east
+                
+                Other commands are available as well here:
                 Type 'exit' at any time to exit the game.
-                Type 'help' at any time to show a list of commands you can type.
                 Type 'look' to get information about your whereabouts.
+                Type 'help' at any time to show a list of commands you can type.
                 
                 """);
 
@@ -39,8 +46,8 @@ public class UserInterface
                     if (canGoNorth)
                     {
                         System.out.println("You have chosen to go North.");
-                        player.goNorth();
                         System.out.println(player.look());
+                        System.out.println("Items in this room: \n" + items.printItems());
                     } else
                         System.out.println("You cannot go this way!");
                     break;
@@ -50,8 +57,8 @@ public class UserInterface
                     if (canGoSouth)
                     {
                         System.out.println("You have chosen to go South.");
-                        player.goSouth();
                         System.out.println(player.look());
+                        System.out.println("Items in this room: \n" + items.printItems());
                     } else
                         System.out.println("You cannot go this way!");
                     break;
@@ -61,8 +68,8 @@ public class UserInterface
                     if (canGoWest)
                     {
                         System.out.println("You have chosen to go West.");
-                        player.goWest();
                         System.out.println(player.look());
+                        System.out.println("Items in this room: \n" + items.printItems());
                     } else
                         System.out.println("You cannot go that way!");
                     break;
@@ -72,8 +79,8 @@ public class UserInterface
                     if (canGoEast)
                     {
                         System.out.println("You have chosen to go East.");
-                        player.goEast();
                         System.out.println(player.look());
+                        System.out.println("Items in this room: \n" + items.printItems());
                     } else
                         System.out.println("You cannot go that way!");
                     break;

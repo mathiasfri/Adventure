@@ -63,4 +63,9 @@ public class Player
     {
         return m.currentRoom.getRoomInfo();
     }
+
+    public void takeItem()
+    {
+
+    }
 }

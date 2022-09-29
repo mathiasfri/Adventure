@@ -16,7 +16,8 @@ public class Map
         Room room8 = new Room(8, "Rum nummer 8");
         Room room9 = new Room(9, "Rum nummer 9");
 
-        //TODO Navigering
+        //TODO Opsætning af navigering
+        currentRoom = room1;
 
         // Navigering i room1
         room1.setEast(room2);
@@ -48,12 +49,24 @@ public class Map
         // Navigering i room8
         room8.setNorth(room5);
         room8.setEast(room9);
-        room8.setEast(room7);
+        room8.setWest(room7);
 
         // Navigering i room9
         room9.setNorth(room6);
         room9.setWest(room8);
 
-        currentRoom = room1;
+
+
+        // TODO Oprettelse af items
+
+        room1.items.add("Bright lamp");
+        room2.items.add("Rusty key");
+        room3.items.add("Candle");
+        room4.items.add("Map");
+        room5.items.add("Samurai sword");
+        room6.items.add("Recipe");
+        room7.items.add("Elixir");
+        room8.items.add("Golden key");
+        room9.items.add("Old trophy");
     }
 }
