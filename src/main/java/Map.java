@@ -59,15 +59,15 @@ public class Map
 
         // TODO Oprettelse af items
 
-        room1.items.add(new Item("Bright lamp"));
-        room2.items.add(new Item("Rusty key"));
-        room3.items.add(new Item("Candle"));
-        room4.items.add(new Item("Map"));
-        room5.items.add(new Item("Samurai sword"));
-        room6.items.add(new Item("Samurai sword"));
-        room7.items.add(new Item("Elixir"));
-        room8.items.add(new Item("Golden key"));
-        room9.items.add(new Item("Old trophy"));
+        room1.getItems().add(new Item("Bright lamp"));
+        room2.getItems().add(new Item("Rusty key"));
+        room3.getItems().add(new Item("Candle"));
+        room4.getItems().add(new Item("Map"));
+        room5.getItems().add(new Item("Samurai sword"));
+        room6.getItems().add(new Item("Lamp fluid"));
+        room7.getItems().add(new Item("Elixir"));
+        room8.getItems().add(new Item("Golden key"));
+        room9.getItems().add(new Item("Old trophy"));
     }
 
     public Room getStarterRoom()

@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6741f2af-9775-4a74-8582-1fe7bcdbf5a7" name="Changes" comment="Oprettet ArrayList og tilføjet en enkel item til hvert rum">
+    <list default="true" id="6741f2af-9775-4a74-8582-1fe7bcdbf5a7" name="Changes" comment="Tilføjet items til rum, samt print af items når man går ind i dem.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Adventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Adventure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Room.java" afterDir="false" />
@@ -45,6 +44,20 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/mathi/OneDrive - Københavns Erhvervsakademi/Oplærings programmer i programmering/Adventure&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Adventure" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -55,7 +68,7 @@
       <updated>1664274991083</updated>
       <workItem from="1664274992451" duration="8419000" />
       <workItem from="1664354360983" duration="4568000" />
-      <workItem from="1664444569009" duration="15112000" />
+      <workItem from="1664444569009" duration="29752000" />
     </task>
     <task id="LOCAL-00001" summary="Oprettet klasser, samt lavet set metoder for retninger">
       <created>1664276755604</created>
@@ -106,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664454857180</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Tilføjet items til rum, samt print af items når man går ind i dem.">
+      <created>1664524178375</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1664524178375</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +152,7 @@
     <MESSAGE value="Lavet Player og Map klasse og delt koden op i disse klasser." />
     <MESSAGE value="Tilføjet ArrayList og tilføjet en enkel item til hvert rum" />
     <MESSAGE value="Oprettet ArrayList og tilføjet en enkel item til hvert rum" />
-    <option name="LAST_COMMIT_MESSAGE" value="Oprettet ArrayList og tilføjet en enkel item til hvert rum" />
+    <MESSAGE value="Tilføjet items til rum, samt print af items når man går ind i dem." />
+    <option name="LAST_COMMIT_MESSAGE" value="Tilføjet items til rum, samt print af items når man går ind i dem." />
   </component>
 </project>

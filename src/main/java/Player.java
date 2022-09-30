@@ -1,7 +1,10 @@
+import java.util.ArrayList;
+
 public class Player
 {
     private Room currentRoom;
     Map m;
+    private ArrayList<Item> inventory = new ArrayList<>();
 
     public Player()
     {
@@ -61,10 +64,26 @@ public class Player
         }
     }
 
-
     public String look()
     {
         return currentRoom.getRoomInfo();
+    }
+
+    public void addItemToInventory(Item item)
+    {
+        inventory.add(item);
+    }
+
+    public boolean takeItem(String itemName)
+    {
+        boolean takenItem = false;
+        Item pickupItem = currentRoom.searchItem(itemName);
+        if (pickupItem != null)
+        {
+            addItemToInventory(pickupItem);
+            currentRoom.removeItem(pickupItem);
+        }
+        return takenItem;
     }
 
     public Room getCurrentRoom()

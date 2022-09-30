@@ -7,6 +7,7 @@ public class UserInterface
     Player player;
     Map map;
     Adventure ad;
+    static String pickupItem;
 
     public UserInterface()
     {
@@ -85,6 +86,20 @@ public class UserInterface
 
                 case "look":
                     System.out.println(player.look());
+                    break;
+
+                case "take":
+                    System.out.println("Which item do you want to pickup?");
+                    pickupItem = sc.nextLine();
+                    boolean itemTaken = player.takeItem(pickupItem);
+                    if (itemTaken)
+                    {
+                        System.out.println("You have taken: " + pickupItem);
+                    }
+                    else
+                    {
+                        System.out.println(pickupItem + " Cannot be found in the room.");
+                    }
                     break;
 
                 case "exit":

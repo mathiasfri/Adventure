@@ -7,6 +7,16 @@ public class Item
         this.name = name;
     }
 
+    public Item(Item item)
+    {
+        this.name = item.name;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
     public String toString()
     {
         return name;
