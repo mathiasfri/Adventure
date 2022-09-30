@@ -1,6 +1,6 @@
 public class Map
 {
-    Room currentRoom;
+    private Room starterRoom;
 
     public Map()
     {
@@ -17,7 +17,6 @@ public class Map
         Room room9 = new Room(9, "Rum nummer 9");
 
         //TODO Opsætning af navigering
-        currentRoom = room1;
 
         // Navigering i room1
         room1.setEast(room2);
@@ -55,18 +54,24 @@ public class Map
         room9.setNorth(room6);
         room9.setWest(room8);
 
+        this.starterRoom = room1;
 
 
         // TODO Oprettelse af items
 
-        room1.items.add("Bright lamp");
-        room2.items.add("Rusty key");
-        room3.items.add("Candle");
-        room4.items.add("Map");
-        room5.items.add("Samurai sword");
-        room6.items.add("Recipe");
-        room7.items.add("Elixir");
-        room8.items.add("Golden key");
-        room9.items.add("Old trophy");
+        room1.items.add(new Item("Bright lamp"));
+        room2.items.add(new Item("Rusty key"));
+        room3.items.add(new Item("Candle"));
+        room4.items.add(new Item("Map"));
+        room5.items.add(new Item("Samurai sword"));
+        room6.items.add(new Item("Samurai sword"));
+        room7.items.add(new Item("Elixir"));
+        room8.items.add(new Item("Golden key"));
+        room9.items.add(new Item("Old trophy"));
+    }
+
+    public Room getStarterRoom()
+    {
+        return starterRoom;
     }
 }

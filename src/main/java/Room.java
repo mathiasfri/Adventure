@@ -8,7 +8,7 @@ public class Room
     private Room roomWest;
     private Room roomNorth;
     private Room roomSouth;
-    ArrayList<String> items = new ArrayList<>();
+    ArrayList<Item> items = new ArrayList<>();
 
     public Room(int roomNumber, String roomDescription)
     {
@@ -61,8 +61,8 @@ public class Room
         return roomDescription;
     }
 
-    public String getItems()
+    public ArrayList<Item> getItems()
     {
-        return items.get(roomNumber - 1);
+        return items;
     }
 }

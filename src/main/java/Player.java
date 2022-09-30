@@ -1,71 +1,79 @@
 public class Player
 {
+    private Room currentRoom;
     Map m;
 
     public Player()
     {
         m = new Map();
+        setCurrentRoom(m.getStarterRoom());
     }
 
     public boolean goEast()
     {
-        if (m.currentRoom.getEast() == null)
+        if (getCurrentRoom().getEast() == null)
         {
             return false;
         }
         else
         {
-            m.currentRoom = m.currentRoom.getEast();
+            setCurrentRoom(getCurrentRoom().getEast());
             return true;
         }
     }
 
     public boolean goWest()
     {
-        if (m.currentRoom.getWest() == null)
+        if (getCurrentRoom().getWest() == null)
         {
             return false;
         }
         else
         {
-            m.currentRoom = m.currentRoom.getWest();
+            setCurrentRoom(getCurrentRoom().getWest());
             return true;
         }
     }
 
     public boolean goNorth()
     {
-        if (m.currentRoom.getNorth() == null)
+        if (getCurrentRoom().getNorth() == null)
         {
             return false;
         }
         else
         {
-            m.currentRoom = m.currentRoom.getNorth();
+            setCurrentRoom(getCurrentRoom().getNorth());
             return true;
         }
     }
 
     public boolean goSouth()
     {
-        if (m.currentRoom.getSouth() == null)
+        if (getCurrentRoom().getSouth() == null)
         {
             return false;
         }
         else
         {
-            m.currentRoom = m.currentRoom.getSouth();
+            setCurrentRoom(getCurrentRoom().getSouth());
             return true;
         }
     }
 
+
     public String look()
     {
-        return m.currentRoom.getRoomInfo();
+        return currentRoom.getRoomInfo();
     }
 
-    public void takeItem()
+    public Room getCurrentRoom()
     {
+        return currentRoom;
+    }
 
+    public void setCurrentRoom(Room currentRoom)
+    {
+        this.currentRoom = currentRoom;
     }
 }

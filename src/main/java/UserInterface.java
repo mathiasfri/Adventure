@@ -7,14 +7,12 @@ public class UserInterface
     Player player;
     Map map;
     Adventure ad;
-    Items items;
 
     public UserInterface()
     {
         player = new Player();
         map = new Map();
         ad = new Adventure();
-        items = new Items();
     }
 
     public void start()
@@ -47,7 +45,7 @@ public class UserInterface
                     {
                         System.out.println("You have chosen to go North.");
                         System.out.println(player.look());
-                        System.out.println("Items in this room: \n" + items.printItems());
+                        System.out.println("Item in this room: \n" + player.getCurrentRoom().getItems());
                     } else
                         System.out.println("You cannot go this way!");
                     break;
@@ -58,7 +56,7 @@ public class UserInterface
                     {
                         System.out.println("You have chosen to go South.");
                         System.out.println(player.look());
-                        System.out.println("Items in this room: \n" + items.printItems());
+                        System.out.println("Item in this room: \n" + player.getCurrentRoom().getItems());
                     } else
                         System.out.println("You cannot go this way!");
                     break;
@@ -69,7 +67,7 @@ public class UserInterface
                     {
                         System.out.println("You have chosen to go West.");
                         System.out.println(player.look());
-                        System.out.println("Items in this room: \n" + items.printItems());
+                        System.out.println("Item in this room: \n" + player.getCurrentRoom().getItems());
                     } else
                         System.out.println("You cannot go that way!");
                     break;
@@ -80,7 +78,7 @@ public class UserInterface
                     {
                         System.out.println("You have chosen to go East.");
                         System.out.println(player.look());
-                        System.out.println("Items in this room: \n" + items.printItems());
+                        System.out.println("Item in this room: \n" + player.getCurrentRoom().getItems());
                     } else
                         System.out.println("You cannot go that way!");
                     break;
