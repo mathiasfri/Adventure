@@ -82,8 +82,56 @@ public class Player
         {
             addItemToInventory(pickupItem);
             currentRoom.removeItem(pickupItem);
+            takenItem = true;
         }
         return takenItem;
+    }
+
+    public Item printInventory()
+    {
+        for (Item item : inventory)
+        {
+            return item;
+        }
+        return null;
+    }
+
+    public Item searchItemInInventory(String item)
+    {
+        for (Item i : inventory)
+        {
+            if (i.getName().equals(item))
+            {
+                return i;
+            }
+        }
+        return null;
+    }
+
+    public void removeItemFromInventory(Item item)
+    {
+        int in = -1;
+        for (int i = 0; i < inventory.size(); i++)
+        {
+            if (inventory.get(i) == item)
+            {
+                in = i;
+            }
+            inventory.remove(in);
+        }
+    }
+
+    public boolean dropItem(String itemName)
+    {
+        boolean droppedItem = false;
+        Item dropItem = searchItemInInventory(itemName);
+        if (dropItem != null)
+        {
+            getCurrentRoom().addItemToRoom(dropItem);
+            removeItemFromInventory(dropItem);
+            droppedItem = true;
+        }
+        return droppedItem;
     }
 
     public Room getCurrentRoom()

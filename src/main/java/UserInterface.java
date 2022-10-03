@@ -7,7 +7,6 @@ public class UserInterface
     Player player;
     Map map;
     Adventure ad;
-    static String pickupItem;
 
     public UserInterface()
     {
@@ -25,10 +24,15 @@ public class UserInterface
                 south/s/go south - to go south
                 east/e/go east - to go east
                 
-                Other commands are available as well here:
-                Type 'exit' at any time to exit the game.
+                Helpful commands:
                 Type 'look' to get information about your whereabouts.
+                Type 'inventory' or 'inv' to show your current inventory
+                Type 'drop' to drop an item in your inventory
+                
+                Other commands:
+                Type 'exit' at any time to exit the game.
                 Type 'help' at any time to show a list of commands you can type.
+                
                 
                 """);
 
@@ -90,7 +94,7 @@ public class UserInterface
 
                 case "take":
                     System.out.println("Which item do you want to pickup?");
-                    pickupItem = sc.nextLine();
+                    String pickupItem = sc.nextLine();
                     boolean itemTaken = player.takeItem(pickupItem);
                     if (itemTaken)
                     {
@@ -101,6 +105,24 @@ public class UserInterface
                         System.out.println(pickupItem + " Cannot be found in the room.");
                     }
                     break;
+
+                case "inventory", "inv":
+                    System.out.println("Your inventory: ");
+                    System.out.println(player.printInventory());
+                    break;
+
+                case "drop":
+                    System.out.println("Which item do you wish to drop?");
+                    String removeItem = sc.nextLine();
+                    boolean itemDropped = player.dropItem(removeItem);
+                    if (itemDropped)
+                    {
+                        System.out.println("You have droppet item: " + removeItem);
+                    }
+                    else
+                        System.out.println("Could not find " + removeItem + " in your inventory");
+                    break;
+
 
                 case "exit":
                     System.out.println("Cheers :)");

@@ -8,7 +8,6 @@ public class Room
     private Room roomWest;
     private Room roomNorth;
     private Room roomSouth;
-    private String itemName;
     private ArrayList<Item> items = new ArrayList<>();
 
     public Room(int roomNumber, String roomDescription)
@@ -62,13 +61,18 @@ public class Room
         return roomDescription;
     }
 
+    public void addItemToRoom(Item item)
+    {
+        items.add(item);
+    }
+
     public Item searchItem(String itemName)
     {
         for (Item i : items)
         {
-            if (i.getName().contains(itemName))
+            if (i.getName().equalsIgnoreCase(itemName))
             {
-                System.out.println(i);
+                return i;
             }
         }
         return null;
