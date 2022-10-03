@@ -5,6 +5,7 @@ public class Player
     private Room currentRoom;
     Map m;
     private ArrayList<Item> inventory = new ArrayList<>();
+    private Integer health = 100;
 
     public Player()
     {
@@ -132,6 +133,11 @@ public class Player
             droppedItem = true;
         }
         return droppedItem;
+    }
+
+    public Integer getHealth()
+    {
+        return health;
     }
 
     public Room getCurrentRoom()

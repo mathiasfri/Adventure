@@ -136,6 +136,7 @@ public class UserInterface
                             Helpful commands:
                             Type 'look' to get information about your whereabouts.
                             Type 'inventory' or 'inv' to show your current inventory
+                            Type 'take' to pick up an item in your current room
                             Type 'drop' to drop an item in your inventory
                 
                             Other commands:
@@ -144,7 +145,18 @@ public class UserInterface
                             """);
                     break;
 
-
+                case "health", "hp":
+                    Integer health = player.getHealth();
+                    if (health > 0 && 24 > health)
+                        System.out.println("Health: " + health + " - You are dying and should eat before moving forward.");
+                    if (health > 25 && 49 > health)
+                        System.out.println("Health: " + health + " - You are good, but should probably eat now.");
+                    if (health > 50 && 74 > health)
+                        System.out.println("Health: " + health + " - You are in good health and can take a few hits before eating.");
+                    if (health > 75 && 100 >= health)
+                        System.out.println("Health: " + health + " - You are in peak condition and ready to fight.");
+                    break;
+                    
                 case "exit":
                     System.out.println("Cheers :)");
                     System.exit(0);
