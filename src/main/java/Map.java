@@ -4,19 +4,19 @@ public class Map
 
     public Map()
     {
-        // TODO Opret rummene
+        // TODO Create rooms
 
-        Room room1 = new Room(1, "Rum nummer 1");
-        Room room2 = new Room(2, "Rum nummer 2");
-        Room room3 = new Room(3, "Rum nummer 3");
-        Room room4 = new Room(4, "Rum nummer 4");
-        Room room5 = new Room(5, "Rum nummer 5");
-        Room room6 = new Room(6, "Rum nummer 6");
-        Room room7 = new Room(7, "Rum nummer 7");
-        Room room8 = new Room(8, "Rum nummer 8");
-        Room room9 = new Room(9, "Rum nummer 9");
+        Room room1 = new Room(1, "Room number 1");
+        Room room2 = new Room(2, "Room number 2");
+        Room room3 = new Room(3, "Room number 3");
+        Room room4 = new Room(4, "Room number 4");
+        Room room5 = new Room(5, "Room number 5");
+        Room room6 = new Room(6, "Room number 6");
+        Room room7 = new Room(7, "Room number 7");
+        Room room8 = new Room(8, "Room number 8");
+        Room room9 = new Room(9, "Room number 9");
 
-        //TODO Opsætning af navigering
+        //TODO Navigation
 
         // Navigering i room1
         room1.setEast(room2);
@@ -57,7 +57,7 @@ public class Map
         this.starterRoom = room1;
 
 
-        // TODO Oprettelse af items
+        // TODO Items
 
         room1.getItems().add(new Item("Bright lamp"));
         room2.getItems().add(new Item("Rusty key"));

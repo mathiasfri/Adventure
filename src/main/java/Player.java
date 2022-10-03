@@ -100,7 +100,7 @@ public class Player
     {
         for (Item i : inventory)
         {
-            if (i.getName().equals(item))
+            if (i.getName().equalsIgnoreCase(item))
             {
                 return i;
             }

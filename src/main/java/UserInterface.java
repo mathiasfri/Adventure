@@ -18,7 +18,7 @@ public class UserInterface
     public void start()
     {
         System.out.println("""
-                Welcome to your adventure! To move around, type in the following: 
+                Welcome to your adventure! To move around, type in the following:
                 west/w/go west - to go west
                 north/n/go north - to go north
                 south/s/go south - to go south
@@ -33,10 +33,12 @@ public class UserInterface
                 Type 'exit' at any time to exit the game.
                 Type 'help' at any time to show a list of commands you can type.
                 
-                
                 """);
 
         String userChoice = null;
+
+        System.out.println(player.look());
+        System.out.println("Item in this room: \n" + player.getCurrentRoom().getItems());
 
         while (!Objects.equals(userChoice, "exit"))
         {
@@ -121,6 +123,25 @@ public class UserInterface
                     }
                     else
                         System.out.println("Could not find " + removeItem + " in your inventory");
+                    break;
+
+                case "help":
+                    System.out.println("""
+                            Commands available:
+                            west/w/go west - to go west
+                            north/n/go north - to go north
+                            south/s/go south - to go south
+                            east/e/go east - to go east
+                
+                            Helpful commands:
+                            Type 'look' to get information about your whereabouts.
+                            Type 'inventory' or 'inv' to show your current inventory
+                            Type 'drop' to drop an item in your inventory
+                
+                            Other commands:
+                            Type 'exit' at any time to exit the game.
+                            Type 'help' at any time to show a list of commands you can type.
+                            """);
                     break;
 
 

@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6741f2af-9775-4a74-8582-1fe7bcdbf5a7" name="Changes" comment="Tilføjet search, remove, takeItem og addItemToInventory. Halvdelen af delopgave 2 færdig.">
+    <list default="true" id="6741f2af-9775-4a74-8582-1fe7bcdbf5a7" name="Changes" comment="Tilføjet inventory, take og drop metoder. (Færdiggjort delopgave 2)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Room.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +66,7 @@
       <updated>1664274991083</updated>
       <workItem from="1664274992451" duration="8419000" />
       <workItem from="1664354360983" duration="4568000" />
-      <workItem from="1664444569009" duration="35957000" />
+      <workItem from="1664444569009" duration="38826000" />
     </task>
     <task id="LOCAL-00001" summary="Oprettet klasser, samt lavet set metoder for retninger">
       <created>1664276755604</created>
@@ -131,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664540903852</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Tilføjet inventory, take og drop metoder. (Færdiggjort delopgave 2)">
+      <created>1664785532948</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1664785532948</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +166,7 @@
     <MESSAGE value="Oprettet ArrayList og tilføjet en enkel item til hvert rum" />
     <MESSAGE value="Tilføjet items til rum, samt print af items når man går ind i dem." />
     <MESSAGE value="Tilføjet search, remove, takeItem og addItemToInventory. Halvdelen af delopgave 2 færdig." />
-    <option name="LAST_COMMIT_MESSAGE" value="Tilføjet search, remove, takeItem og addItemToInventory. Halvdelen af delopgave 2 færdig." />
+    <MESSAGE value="Tilføjet inventory, take og drop metoder. (Færdiggjort delopgave 2)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tilføjet inventory, take og drop metoder. (Færdiggjort delopgave 2)" />
   </component>
 </project>
