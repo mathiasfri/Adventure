@@ -1,11 +1,12 @@
-public class Food
+public class Food extends Item
 {
-    Item item;
-
-    public Food()
+    public Food(String name)
     {
-        item = new Item("food");
+        super(name);
     }
 
-
+    public String toString()
+    {
+        return super.toString();
+    }
 }

@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class Player
 {
@@ -88,13 +90,9 @@ public class Player
         return takenItem;
     }
 
-    public Item printInventory()
+    public String printInventory()
     {
-        for (Item item : inventory)
-        {
-            return item;
-        }
-        return null;
+        return inventory.toString();
     }
 
     public Item searchItemInInventory(String item)
@@ -111,15 +109,7 @@ public class Player
 
     public void removeItemFromInventory(Item item)
     {
-        int in = -1;
-        for (int i = 0; i < inventory.size(); i++)
-        {
-            if (inventory.get(i) == item)
-            {
-                in = i;
-            }
-            inventory.remove(in);
-        }
+        inventory.remove(item);
     }
 
     public boolean dropItem(String itemName)
@@ -133,6 +123,39 @@ public class Player
             droppedItem = true;
         }
         return droppedItem;
+    }
+
+    public void setHealth(Item item)
+    {
+        if (item instanceof Food)
+        {
+            this.health += 20;
+        }
+
+        if (health > 100)
+        {
+            health = 100;
+        }
+    }
+
+    public FoodEnum eatFood(String itemName)
+    {
+        Item eatItem = searchItemInInventory(itemName);
+
+        if (eatItem == null)
+        {
+            return FoodEnum.NOT_FOUND;
+        }
+
+        else if (eatItem instanceof Food)
+        {
+            setHealth(eatItem);
+            removeItemFromInventory(eatItem);
+            return FoodEnum.FOOD;
+        }
+
+        else
+            return FoodEnum.NOT_FOOD;
     }
 
     public Integer getHealth()

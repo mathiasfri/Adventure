@@ -80,15 +80,7 @@ public class Room
 
     public void removeItem(Item item)
     {
-        int in = -1;
-        for (int i = 0; i < items.size(); i++)
-        {
-            if (items.get(i) == item)
-            {
-                in = i;
-            }
-            items.remove(in);
-        }
+        items.remove(item);
     }
 
     public ArrayList<Item> getItems()

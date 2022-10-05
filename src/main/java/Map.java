@@ -68,6 +68,15 @@ public class Map
         room7.getItems().add(new Item("Elixir"));
         room8.getItems().add(new Item("Golden key"));
         room9.getItems().add(new Item("Old trophy"));
+
+
+        // TODO Food
+
+        room1.getItems().add(new Food("Apple"));
+        room2.getItems().add(new Food("Chocolate"));
+        room5.getItems().add(new Food("Corn"));
+        room7.getItems().add(new Food("Energy bar"));
+        room9.getItems().add(new Food("Beef jerky"));
     }
 
     public Room getStarterRoom()

@@ -27,7 +27,9 @@ public class UserInterface
                 Helpful commands:
                 Type 'look' to get information about your whereabouts.
                 Type 'inventory' or 'inv' to show your current inventory
+                Type 'take' to pick up an item in your current room
                 Type 'drop' to drop an item in your inventory
+                Type 'health' or 'hp' to see your current health
                 
                 Other commands:
                 Type 'exit' at any time to exit the game.
@@ -125,6 +127,38 @@ public class UserInterface
                         System.out.println("Could not find " + removeItem + " in your inventory");
                     break;
 
+                case "eat":
+                    System.out.println("Here is your inventory: ");
+                    System.out.println(player.printInventory());
+                    System.out.println("What would you like to eat?");
+                    FoodEnum determineFood = player.eatFood(sc.nextLine());
+                    switch (determineFood)
+                    {
+                        case FOOD:
+                            System.out.println("You have eaten " + determineFood + " and it is no longer in your inventory.");
+                            System.out.println(player.getHealth());
+                            break;
+
+                        case NOT_FOUND:
+                            System.out.println("Could not find " + determineFood + " in your inventory.");
+                            break;
+
+                        case NOT_FOOD:
+                            System.out.println("Why are you trying to eat a " + determineFood + "? That is not possible.");
+                    }
+
+                case "health", "hp":
+                    Integer health = player.getHealth();
+                    if (health > 0 && 24 > health)
+                        System.out.println("Health: " + health + " - You are dying and should eat before moving forward.");
+                    if (health > 25 && 49 > health)
+                        System.out.println("Health: " + health + " - You are good, but should probably eat now.");
+                    if (health > 50 && 74 > health)
+                        System.out.println("Health: " + health + " - You are in good health and can take a few hits before eating.");
+                    if (health > 75 && 100 >= health)
+                        System.out.println("Health: " + health + " - You are in peak condition and ready to fight.");
+                    break;
+
                 case "help":
                     System.out.println("""
                             Commands available:
@@ -138,6 +172,7 @@ public class UserInterface
                             Type 'inventory' or 'inv' to show your current inventory
                             Type 'take' to pick up an item in your current room
                             Type 'drop' to drop an item in your inventory
+                            Type 'health' or 'hp' to see your current health
                 
                             Other commands:
                             Type 'exit' at any time to exit the game.
@@ -145,18 +180,6 @@ public class UserInterface
                             """);
                     break;
 
-                case "health", "hp":
-                    Integer health = player.getHealth();
-                    if (health > 0 && 24 > health)
-                        System.out.println("Health: " + health + " - You are dying and should eat before moving forward.");
-                    if (health > 25 && 49 > health)
-                        System.out.println("Health: " + health + " - You are good, but should probably eat now.");
-                    if (health > 50 && 74 > health)
-                        System.out.println("Health: " + health + " - You are in good health and can take a few hits before eating.");
-                    if (health > 75 && 100 >= health)
-                        System.out.println("Health: " + health + " - You are in peak condition and ready to fight.");
-                    break;
-                    
                 case "exit":
                     System.out.println("Cheers :)");
                     System.exit(0);
