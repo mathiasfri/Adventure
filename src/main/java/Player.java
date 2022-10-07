@@ -8,6 +8,7 @@ public class Player
     Map m;
     private ArrayList<Item> inventory = new ArrayList<>();
     private Integer health = 100;
+    private Weapon equippedWeapon;
 
     public Player()
     {
@@ -156,6 +157,39 @@ public class Player
 
         else
             return FoodEnum.NOT_FOOD;
+    }
+
+    public void setEquippedWeapon(Weapon equippedWeapon)
+    {
+        this.equippedWeapon = equippedWeapon;
+    }
+
+    public WeaponEnum equipWeapon(String itemName)
+    {
+        Weapon weaponEquip = (Weapon) searchItemInInventory(itemName);
+
+        if (weaponEquip == null)
+        {
+            return WeaponEnum.NOT_FOUND;
+        }
+
+        else if (weaponEquip instanceof Weapon)
+        {
+            currentRoom.removeItem(weaponEquip);
+            setEquippedWeapon(weaponEquip);
+            return WeaponEnum.WEAPON;
+        }
+        else
+            return WeaponEnum.NOT_WEAPON;
+    }
+
+    public AttackEnum attack()
+    {
+        if (equippedWeapon instanceof Weapon)
+        {
+            return equippedWeapon.attack();
+        }
+        return AttackEnum.NOTHING_EQUIPPED;
     }
 
     public Integer getHealth()

@@ -63,7 +63,7 @@ public class Map
         room2.getItems().add(new Item("Rusty key"));
         room3.getItems().add(new Item("Candle"));
         room4.getItems().add(new Item("Map"));
-        room5.getItems().add(new Item("Samurai sword"));
+        room5.getItems().add(new Item("Bag"));
         room6.getItems().add(new Item("Lamp fluid"));
         room7.getItems().add(new Item("Elixir"));
         room8.getItems().add(new Item("Golden key"));
@@ -77,6 +77,14 @@ public class Map
         room5.getItems().add(new Food("Corn"));
         room7.getItems().add(new Food("Energy bar"));
         room9.getItems().add(new Food("Beef jerky"));
+
+
+        // TODO Weapons
+        room1.getItems().add(new MeleeWeapon("Sword"));
+        room3.getItems().add(new RangedWeapon("Slingshot"));
+        room5.getItems().add(new RangedWeapon("Bow and arrow"));
+        room7.getItems().add(new MeleeWeapon("Machete"));
+        room9.getItems().add(new RangedWeapon("Revolver"));
     }
 
     public Room getStarterRoom()

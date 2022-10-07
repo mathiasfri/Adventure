@@ -30,6 +30,7 @@ public class UserInterface
                 Type 'take' to pick up an item in your current room
                 Type 'drop' to drop an item in your inventory
                 Type 'health' or 'hp' to see your current health
+                Type 'equip' to equip a weapon
                 
                 Other commands:
                 Type 'exit' at any time to exit the game.
@@ -145,6 +146,48 @@ public class UserInterface
 
                         case NOT_FOOD:
                             System.out.println("Why are you trying to eat a " + determineFood + "? That is not possible.");
+                            break;
+                    }
+
+                case "equip":
+                    System.out.println("Here is your inventory: ");
+                    System.out.println(player.printInventory());
+                    System.out.println("Which weapon do you want to equip?");
+                    WeaponEnum determineWeapon = player.equipWeapon(sc.nextLine());
+                    switch (determineWeapon)
+                    {
+                        case WEAPON:
+                            System.out.println("You have equipped: " + determineWeapon);
+                            break;
+
+                        case NOT_FOUND:
+                            System.out.println("Could not find " + determineWeapon + " in your inventory");
+                            break;
+
+                        case NOT_WEAPON:
+                            System.out.println("You cannot equip " + determineWeapon + " as a weapon!?");
+                            break;
+                    }
+
+                case "attack":
+                    AttackEnum determineAttack = player.attack();
+                    switch (determineAttack)
+                    {
+                        case NO_AMMO:
+                            System.out.println("You have no more ammo!");
+                            break;
+
+                        case FIRE:
+                            System.out.println("You have shot your weapon.");
+                            break;
+
+                        case ATTACK:
+                            System.out.println("You have swung your weapon.");
+                            break;
+
+                        case NOTHING_EQUIPPED:
+                            System.out.println("You do not have a weapon equipped!");
+                            break;
                     }
 
                 case "health", "hp":
@@ -173,6 +216,7 @@ public class UserInterface
                             Type 'take' to pick up an item in your current room
                             Type 'drop' to drop an item in your inventory
                             Type 'health' or 'hp' to see your current health
+                            Type 'equip' to equip a weapon
                 
                             Other commands:
                             Type 'exit' at any time to exit the game.
