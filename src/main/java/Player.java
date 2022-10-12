@@ -9,6 +9,7 @@ public class Player
     private ArrayList<Item> inventory = new ArrayList<>();
     private Integer health = 100;
     private Weapon equippedWeapon;
+    private Enemy enemy;
 
     public Player()
     {
@@ -130,7 +131,7 @@ public class Player
     {
         if (item instanceof Food)
         {
-            this.health += 20;
+            this.health += ((Food) item).getHealthGain();
         }
 
         if (health > 100)
@@ -143,16 +144,16 @@ public class Player
     {
         Item eatItem = searchItemInInventory(itemName);
 
-        if (eatItem == null)
-        {
-            return FoodEnum.NOT_FOUND;
-        }
-
-        else if (eatItem instanceof Food)
+        if (eatItem instanceof Food)
         {
             setHealth(eatItem);
             removeItemFromInventory(eatItem);
             return FoodEnum.FOOD;
+        }
+
+        else if (eatItem == null)
+        {
+            return FoodEnum.NOT_FOUND;
         }
 
         else
@@ -175,7 +176,6 @@ public class Player
 
         else if (weaponEquip instanceof Weapon)
         {
-            currentRoom.removeItem(weaponEquip);
             setEquippedWeapon(weaponEquip);
             return WeaponEnum.WEAPON;
         }
@@ -183,13 +183,80 @@ public class Player
             return WeaponEnum.NOT_WEAPON;
     }
 
-    public AttackEnum attack()
+    private AttackEnum attackMethod()
     {
-        if (equippedWeapon instanceof Weapon)
+        if (enemy.enemyIsAlive())
         {
-            return equippedWeapon.attack();
+            health -= enemy.getWeapon().getDamage();
+
+            if(enemy.attack() == AttackEnum.NO_AMMO)
+            {
+                return AttackEnum.ENEMY_OUT_OF_AMMO;
+            }
+
+            else
+            {
+                enemy.setHealth(enemy.getHealth() - equippedWeapon.getDamage());
+                if (playerIsAlive())
+                {
+                    return AttackEnum.ATTACK;
+                }
+
+                else
+                    return AttackEnum.PLAYER_DEAD;
+            }
         }
-        return AttackEnum.NOTHING_EQUIPPED;
+
+        else
+        {
+            currentRoom.addItemToRoom(enemy.getWeapon());
+            currentRoom.removeEnemyFromRoom(enemy);
+            return AttackEnum.ENEMY_DEAD;
+        }
+    }
+
+    public AttackEnum attack(String enemyName)
+    {
+        setCurrentEnemy(enemyName);
+
+        if (equippedWeapon == null)
+        {
+            return AttackEnum.NOTHING_EQUIPPED;
+        }
+
+        if (currentRoom.searchEnemy(enemyName) == null)
+        {
+            return AttackEnum.NO_ENEMY_FOUND;
+        }
+
+        if (equippedWeapon.attack() == AttackEnum.NO_AMMO)
+        {
+            return AttackEnum.NO_AMMO;
+        }
+
+        else
+            return attackMethod();
+    }
+
+
+    public boolean playerIsAlive()
+    {
+        if (health > 0)
+        {
+            return true;
+        }
+
+        else
+            return false;
+    }
+
+    public void setCurrentEnemy(String enemyName)
+    {
+        Enemy currentEnemy = currentRoom.searchEnemy(enemyName);
+        if (currentEnemy != null)
+        {
+            this.enemy = currentEnemy;
+        }
     }
 
     public Integer getHealth()

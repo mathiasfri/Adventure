@@ -3,5 +3,10 @@ public enum AttackEnum
     FIRE,
     ATTACK,
     NOTHING_EQUIPPED,
-    NO_AMMO;
+    NO_AMMO,
+    ENEMY_ATTACKED,
+    NO_ENEMY_FOUND,
+    ENEMY_DEAD,
+    PLAYER_DEAD,
+    ENEMY_OUT_OF_AMMO
 }

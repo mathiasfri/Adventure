@@ -1,8 +1,16 @@
 public class Food extends Item
 {
-    public Food(String name)
+    int healthGain;
+
+    public Food(String name, int healthGain)
     {
         super(name);
+        this.healthGain = healthGain;
+    }
+
+    public Integer getHealthGain()
+    {
+        return healthGain;
     }
 
     public String toString()

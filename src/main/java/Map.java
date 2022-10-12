@@ -1,6 +1,7 @@
 public class Map
 {
     private Room starterRoom;
+    private Enemy enemy;
 
     public Map()
     {
@@ -59,32 +60,43 @@ public class Map
 
         // TODO Items
 
-        room1.getItems().add(new Item("Bright lamp"));
-        room2.getItems().add(new Item("Rusty key"));
+        room1.getItems().add(new Item("Lamp"));
+        room2.getItems().add(new Item("Key"));
         room3.getItems().add(new Item("Candle"));
         room4.getItems().add(new Item("Map"));
         room5.getItems().add(new Item("Bag"));
-        room6.getItems().add(new Item("Lamp fluid"));
+        room6.getItems().add(new Item("Matches"));
         room7.getItems().add(new Item("Elixir"));
-        room8.getItems().add(new Item("Golden key"));
-        room9.getItems().add(new Item("Old trophy"));
+        room8.getItems().add(new Item("Masterkey"));
+        room9.getItems().add(new Item("Trophy"));
 
 
         // TODO Food
 
-        room1.getItems().add(new Food("Apple"));
-        room2.getItems().add(new Food("Chocolate"));
-        room5.getItems().add(new Food("Corn"));
-        room7.getItems().add(new Food("Energy bar"));
-        room9.getItems().add(new Food("Beef jerky"));
+        room1.getItems().add(new Food("Apple", 20));
+        room2.getItems().add(new Food("Chocolate", 25));
+        room5.getItems().add(new Food("Corn", 15));
+        room7.getItems().add(new Food("Energybar", 40));
+        room9.getItems().add(new Food("Beef", 50));
 
 
         // TODO Weapons
-        room1.getItems().add(new MeleeWeapon("Sword"));
-        room3.getItems().add(new RangedWeapon("Slingshot"));
-        room5.getItems().add(new RangedWeapon("Bow and arrow"));
-        room7.getItems().add(new MeleeWeapon("Machete"));
-        room9.getItems().add(new RangedWeapon("Revolver"));
+        room1.getItems().add(new MeleeWeapon("Sword", 40));
+        room3.getItems().add(new RangedWeapon("Slingshot", 20));
+        room5.getItems().add(new RangedWeapon("Bow", 30));
+        room7.getItems().add(new MeleeWeapon("Machete", 35));
+        room9.getItems().add(new RangedWeapon("Revolver", 50));
+
+
+        // TODO Enemies
+        MeleeWeapon spear = new MeleeWeapon("Spear", 30);
+        room2.getEnemies().add(new Enemy("Bigboy", "A very big tanky monster", 100, spear));
+
+        RangedWeapon rockThrow = new RangedWeapon("Rocks", 15);
+        room4.getEnemies().add(new Enemy("Usain", "Very fast monster that throws rocks", 60, rockThrow));
+
+        MeleeWeapon teeth = new MeleeWeapon("Teeth", 60);
+        room6.getEnemies().add(new Enemy("Cannibal", "Former human with bloodlust", 30, teeth));
     }
 
     public Room getStarterRoom()

@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6741f2af-9775-4a74-8582-1fe7bcdbf5a7" name="Changes" comment="Færdiggjort delopgave 3.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/AttackEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MeleeWeapon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/RangedWeapon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Weapon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/WeaponEnum.java" afterDir="false" />
+    <list default="true" id="6741f2af-9775-4a74-8582-1fe7bcdbf5a7" name="Changes" comment="Færdiggjort delopgave 4">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Enemy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AttackEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AttackEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Food.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MeleeWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MeleeWeapon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RangedWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RangedWeapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Room.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Weapon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -78,7 +80,7 @@
       <workItem from="1664444569009" duration="52603000" />
       <workItem from="1664960689668" duration="9030000" />
       <workItem from="1665007395774" duration="3000" />
-      <workItem from="1665058273202" duration="14919000" />
+      <workItem from="1665058273202" duration="46256000" />
     </task>
     <task id="LOCAL-00001" summary="Oprettet klasser, samt lavet set metoder for retninger">
       <created>1664276755604</created>
@@ -171,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664970258733</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Færdiggjort delopgave 4">
+      <created>1665135416492</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1665135416492</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +212,7 @@
     <MESSAGE value="Fejlrettelser og tilføjet 'help' case til UI" />
     <MESSAGE value="Fået lavet switch case til print af health" />
     <MESSAGE value="Færdiggjort delopgave 3." />
-    <option name="LAST_COMMIT_MESSAGE" value="Færdiggjort delopgave 3." />
+    <MESSAGE value="Færdiggjort delopgave 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Færdiggjort delopgave 4" />
   </component>
 </project>
